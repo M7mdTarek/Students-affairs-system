@@ -1,0 +1,58 @@
+*{
+    font-family: 'Montserrat',sans-serif; 
+    background-color:rgb(210 206 206); 
+    margin: 0;
+    color: #6e6b7b;
+     /* color: #7367f0; this color for buttons */ 
+}
+.navbutton{
+    margin: 0 20px ;
+    text-decoration-line: none;
+    background-color: inherit;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbutton:hover{
+    background-color: #7367f0;
+    padding: 0 10px;
+    color: white;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+#inp1{
+    display: block;
+    position: absolute;
+    right: 20%;
+    width: 60%;
+    margin-top: 50px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: x-large;
+}
+#but1{
+    display: block;
+    position: absolute;
+    right: 42.5%;
+    margin-top: 125px;
+    width: 15%;
+    height: 45px;
+    color: white;
+    background-color: #7367f0;
+    border-radius: 10px;
+}
+#but1:hover{
+    cursor: pointer;
+}

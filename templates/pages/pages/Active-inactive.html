@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block active %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>View active and inactive students</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/Active-inactive.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+        <script src="{%static 'js/Active-inactive.js'%}"></script>
+    </head>
+    <body>
+            <h2 style="text-align: center;">Active and inactive students data</h2>
+            <button id="ShowData" onclick="show()">Show Data</button>
+
+            <div id="wrapper">
+
+                <div id="checkbox_div">
+                 <p>Show Hide Column</p>
+                 <li><input type="checkbox" value="hide" id="name_col" onchange="hide_show_table(this.id);">Name</li>
+                 <li><input type="checkbox" value="hide" id="ID_col" onchange="hide_show_table(this.id);">ID</li>
+                 <li><input type="checkbox" value="hide" id="GPA_col" onchange="hide_show_table(this.id);">GPA</li>
+                 <li><input type="checkbox" value="hide" id="Birth_col" onchange="hide_show_table(this.id);">Birth</li>
+                 <li><input type="checkbox" value="hide" id="Gender_col" onchange="hide_show_table(this.id);">Gender</li>
+                 <li><input type="checkbox" value="hide" id="Level_col" onchange="hide_show_table(this.id);">Level</li>
+                 <li><input type="checkbox" value="hide" id="Status_col" onchange="hide_show_table(this.id);">Status</li>
+                 <li><input type="checkbox" value="hide" id="Department_col" onchange="hide_show_table(this.id);">Department</li>
+                 <li><input type="checkbox" value="hide" id="Email_col" onchange="hide_show_table(this.id);">Email</li>
+                 <li><input type="checkbox" value="hide" id="Mobile-Number_col" onchange="hide_show_table(this.id);">Phone</li>
+
+
+                </div>
+                
+                <table id="employee_table" align="center" cellpadding=10 border="10">
+                    <tr>
+                     <th>S.no</th>
+                     <th id="name_col_head">Name</th>
+                     <th id="ID_col_head">ID</th>
+                     <th id="GPA_col_head">GPA</th>
+                     <th id="Birth_col_head">Date of birth</th>
+                     <th id="Gender_col_head">Gender</th>
+                     <th id="Level_col_head">Level</th>
+                     <th id="Status_col_head">Status</th> <!-- Active or inactive -->
+                     <th id="Department_col_head">Department</th>
+                     <th id="Email_col_head">Email</th>
+                     <th id="Mobile-Number_col_head">Mobile number</th>
+                    </tr>
+
+                    {% for x in name %}
+                    <tr>
+                     <td>1</td>
+                     <td class="name_col">{{x.name}}</td>
+                     <td class="ID_col">{{x.gpa}}</td>
+                     <td class="GPA_col">{{x.Id}}</td>
+                     <td class="Birth_col">{{x.date}}</td>
+                     <td class="Gender_col">{{x.gender}}</td>
+                     <td class="Level_col">{{x.level}}</td>
+                     <td class="Status_col">{{x.status}}</td>
+                     <td class="Department_col">{{x.dep}}</td>
+                     <td class="Email_col"{{x.email}}</td>
+                     <td class="Mobile-Number_col">{{x.mobile}}</td>
+                     <td class="name_col">
+                        <button><a href="{% url 'edit' x.Id %}" style="text-decoration: none;color:black ;">edit</a></button>
+                     </td>
+
+                    </tr>
+                    {% endfor %}
+
+                    
+                    </table>
+               
+    </body>
+</html>
+{% endblock active %}

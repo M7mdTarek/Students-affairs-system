@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block edit %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Edit</title>
+        
+        <link rel="stylesheet"href="{%static 'css/edit.css'%}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        
+        <form action="{% url 'update' stu.Id %}" method="POST" class="user_form">
+           {% csrf_token %}
+          <div class="Userdiv">
+            <div class="header">
+                <p >edit student <span>!</span></p>
+               </div> 
+           <div class="fkid">
+             <label for="id" >ID</label>
+                <input type="text"  name="edit1" id="id" value="{{stu.Id}}" >
+           </div>
+          
+         
+          <br>
+            <div class="user">
+                <label for="user">User Name</label>
+            <input type="text"  name="edit" id="user" minlength="6" maxlength="24" value="{{stu.name}}" required  >
+            </div>
+        <br>
+           <div class="department user">
+            <label for="department">Department</label>
+            <input type="text" disabled name="dp" id="user" minlength="6" maxlength="24" value="{{stu.dep}}" required  >
+            </div>
+        <br>
+           <div class="date">
+            <label for="date">Date of Birth</label>
+            <input type="date"  name="date" id="date" value="{{stu.date|date:"Y-m-d"}}" >
+           </div>
+          <br>
+            <div class="gpa">
+                <label for="gpa">GPA</label>
+            <input type="number"  name="GPA" id="gpa" step="0.1" min="0"max="4" required value="{{stu.gpa}}" >
+            </div>
+          <br>
+           <div class="gender">
+           <span id="gend"><p>Gender</p></span>
+
+           <div class="gpa">
+        <input type="text" name="gender" required value="{{stu.gender}}" >
+        </div>
+
+
+           </div>
+          <br>
+           
+            <div class="level">
+                <label for="lev"> level</label>
+                
+
+                <input type="number" name="level" id="lev" min="0" max="4" required  value="{{stu.level}}">
+            </div>
+            <br>
+           <div class="email">
+            <label for="email">E-mail</label>
+            <input type="email"  name="e-mail" id="email" required >
+           </div>
+           <br>
+           <div class="mobile"> <label for="mobile-number">Mobile number</label>
+            <input type="tel"  name="mobile" id="mobile-number"  required  minlength="11" maxlength="11"  value="{{stu.mobile}}"></div>
+         
+           <div class="buttons">
+               <br>
+
+               <input type="submit" class="delete" value="Edit">
+               <button><a id="delete" class="delete" href="{% url 'delete' stu.Id %}" style="text-decoration: none;color:black ;">delete</a></button>
+               
+               
+           </div>
+          </div>    
+        </form>
+        
+       <div class="footer"></div>
+       <script defer src="{%static 'js/edit.js'%}"></script>
+       <script>
+        $('.user_form').submit(function(){
+            $(".user_form :disabled").removeAttr('disabled');
+        });
+        
+        $(document).ready(function(){
+            $(document).on("click",'#delete',function(e){
+              e.preventDefault();
+              var $this = $(this);
+              x = confirm("Are you sure you want to delet this student?")
+              if(x){
+                $.ajax({
+                  url: $this.attr('href'),
+                  type: 'POST',
+                  datdaType: 'json',
+                  data:{csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()},
+                  });
+              }
+            })
+            })
+       </script>
+    </body>
+</html>
+{% endblock edit %}

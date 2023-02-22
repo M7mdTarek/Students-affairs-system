@@ -1,0 +1,84 @@
+body{
+    font-family: 'Montserrat',sans-serif;
+    background-color: rgb(210, 206, 206);
+}
+*{
+    color: #6e6b7b;
+}
+.navbutton{
+    margin: 0 20px ;
+    text-decoration-line: none;
+    background-color: inherit;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbutton:hover{
+    background-color: #7367f0;
+    padding: 0 10px;
+    color: white;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+#p1{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10px;
+    color: #6e6b7b;
+}
+
+fieldset{
+    border-style: none;
+}
+
+label{
+    margin-left: 20px;
+    font-size: 20px;
+    color: #6e6b7b;
+}
+
+.p{
+    margin-top: 4px;
+    margin-left: 20px;
+    font-size: 20px;
+    display: inline;
+    color: #6e6b7b;
+}
+
+select{
+    margin-left: 5px;
+}
+
+button{
+    padding: 10px 10px;
+    margin: 8px 0;
+    width: 10%;
+    font-size: medium;
+    background-color: #7367f0;
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: purple;
+    font-size: large;
+}
+
+input:hover{
+    border: 2px solid rgb(133, 18, 199);
+}
+
+select:hover{
+    border: 2px solid rgb(133, 18, 199);
+}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block dep %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Add new student</title>
+        <link rel="stylesheet" type="text/css" href="{%static 'css/Assign.css'%}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <p id="p1">Assign a Department</p>
+        <form>
+            <fieldset style="text-align:center;">
+                <label>Name: </label>
+                <input id="1" type="text" placeholder="Enter your name" size="30">
+                <br><br>
+                <label>ID: </label>
+                <input id="2" type="text" placeholder="Enter your ID">
+                <br> <br>
+                
+                <label style="width: auto;">Department: </label>
+                <select>
+                    <option >CS</option>
+                    <option >AI</option>
+                    <option >IT</option>
+                    <option>IS</option>
+                    <option>DS</option>
+                  </select>
+        
+                <label style="width: auto;">Level: </label>
+                <select>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                <br><br>
+                <button onclick="Assign()" type="submit">Add</button>
+                <button type="reset">Reset</button>
+            </fieldset>
+        </form>
+        <script src="{%static 'js/Assign.js'%}"></script>
+    </body>
+</html>
+
+{% endblock dep %}

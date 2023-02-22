@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Student Affairs</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    </head>
+    <body>
+        <nav >
+            <a href="{% url 'home' %}" class="navbutton">home</a>
+            <a href="{% url 'add' %}" class="navbutton">add a new student</a>
+            <a href="{% url 'search' %}" class="navbutton">search</a>
+            <a href="{% url 'Department' %}" class="navbutton">department assignment</a>
+            <a href="{% url 'Active' %}" class="navbutton">state</a>
+            <a href="{% url 'help' %}" class="navbutton">help</a>
+            <a href="{% url 'Logout' %}" class="navbutton">Logout</a>
+
+
+        </nav>
+        <br>
+    </body>
+</html>

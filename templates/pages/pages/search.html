@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+        <title>search</title>
+        <link rel="stylesheet" href="{% static 'css/search.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        {% csrf_token %}
+        <input type="text" name="search" id="inp1"  value="">
+        <br>
+
+        <table id="myTable">
+
+        </table>
+    </body>
+
+    <script>
+        $(function() {
+
+            $('#inp1').keyup(function() {
+        
+                $.ajax({
+                    type: "GET",
+                    url: "/search",
+                    data: {
+                        'search' : $('#inp1').val(),
+                        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+                    },
+                    success: function (response, status, XHR) {
+                        $('#myTable').append(response);
+                                    },
+                    dataType: 'html'
+                });
+            });
+        });
+        
+        {% comment %} function searchSuccess(data, textStatus, jqXHR)
+        {
+            $('#search-results').html(data)
+        } {% endcomment %}
+    </script> 
+</html>
+
+{% endblock content %}

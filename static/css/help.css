@@ -1,0 +1,197 @@
+body{
+    background-color: rgb(210 206 206);
+    font-family:'Montserrat',sans-serif ;
+}
+*{
+    color: #6e6b7b;
+}
+.navbutton{
+    margin: 0 20px ;
+    text-decoration-line: none;
+    background-color: inherit;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbutton:hover{
+    background-color: #7367f0;
+    padding: 0 10px;
+    color: white;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+.headerclass{
+
+  
+    font-size: 50px;
+    width: 522px;
+    height: 69px;
+    background:rgb(210 206 206);
+    text-align: center;
+    padding: 10px;
+    border-radius: 7px;
+    font-style: italic;
+    margin: 10px;
+}
+.section
+{
+   
+    display: flex;
+    border-radius: 15px;
+    background-color: whitesmoke;
+}
+.add_edit{
+    
+   
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 22px;
+    
+}
+.add{
+   
+   
+    width: 250px;
+    height: 450px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    position: relative;
+    right: 42px;
+}
+.add li{
+    padding: 8px;
+    margin: 2px;
+    position: relative;
+    top: 20px;
+   transition: 1s;
+    right: 10px;
+    
+}
+#addlist_show{
+    display: none;
+}
+.edit{
+    width: 243px;
+    margin-right: 25px;
+    margin-left: 25px;
+    height: 500px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    padding-bottom: 46px;
+}
+
+.edit li{
+
+ padding: 8px;
+    margin: 2px;
+    position: relative;
+    top: 20px;
+   
+    right: 10px;
+}
+#editlist_show{
+    display: none;
+}
+.second_section{
+    display: flex;
+    justify-content: space-between;
+}
+.delete{
+ 
+   
+    position: relative;
+    /* left: 0; */
+    margin-right: 25px;
+    width: 282px;
+    height: 469px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    /* bottom: -15px; */
+    top: 39px;
+    padding-bottom: 56px;
+}
+
+.delete li{
+    padding: 8px;
+    margin: 2px;
+    position: relative;
+    top: 20px;
+   
+    right: 10px;
+}
+
+#deleteshow_list{
+    display: none;
+}
+
+.assgin{
+   
+  
+    position: relative;
+    height: 234px;
+    width: 300px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    left: 20px;
+    top: 40px;
+    padding-bottom: 45px;
+}
+
+.assgin li{
+    padding: 8px;
+    margin: 2px;
+    position: relative;
+    top: 20px;
+    right: 10px;
+}
+
+#assginshow_lists
+{
+    display: none;
+}
+
+
+button{
+    
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    padding-right: 16px;
+    transition-duration:1s ;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+.footer{
+    width: 100%;
+    height: 80px;
+    background-color:rgb(210 206 206)
+}
+li , p{
+    color: white;
+}
+
+

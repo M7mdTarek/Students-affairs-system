@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <meta charset="UTF-8"/>
+        <title>Add new student</title>
+        <link rel="stylesheet" type="text/css" href=".{%static 'css/Add style.css'%}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <p id="p1">To add new student please enter the following information:</p>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <fieldset>
+                <label>1-Name: </label>
+                <input id="1" type="text" placeholder="Enter your name" size="30" name="name">
+                <br><br>
+                <label>2-ID: </label>
+                <input id="2" type="number" placeholder="Enter your ID" name="id">
+                <br> <br>
+                <label>3-Date of birth: </label>
+                <input id="3" type="date" name="date">
+                <br><br>
+                <label>4-GPA:</label>
+                <input id="4" type="number" min="0" max="4" step="0.01" name="gpa">
+                <br><br>
+                <p class="p" name="gender">5-Gender:</p>
+                <select>
+                    <option>Select your Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+                <br><br>
+                <p class="p" name="level">6-Level:</p>
+                <select>
+                    <option>Select your level</option>
+                    <option>First level</option>
+                    <option>Second level</option>
+                    <option>Third level</option>
+                    <option>Fourth level</option>
+                </select>
+                <br><br>
+                <p class="p" name="status">7-Status:</p>
+                <select>
+                    <option>Select your status</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                </select>
+                <br><br>
+                <label>8-Department: </label>
+                <input id="8" type="text" placeholder="Enter your department" size="20px" name="dep">
+                <br><br>
+                <label>9-Email: </label>
+                <input id="9" type="email" placeholder="Enter your Email" size="20px" name="email">
+                <br><br>
+                <label>10-Mobile number: </label>
+                <input id="10" type="tel" placeholder="Enter your mobile number" name="mobile">
+                <br><br>
+                <button onclick="add()" type="submit">Add</button>
+                <button type="reset">Reset</button>
+            </fieldset>
+        </form>
+        <!-- <script>
+            $(document).on('submit', 'addingEmploymentForm', function (event) {
+    event.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '/AddEmployee',
+        data: {
+            name: $('#Employee-Name').val(),
+            mail: $('#Employee-E-mail').val(),
+            dateofBirth: $('#Date-Of-Birth').val(),
+            address: $('#Address').val(),
+            gender: $('#Gender').val(),
+            availablevac: $('#Available-Vacations').val(),
+            approvedvac: $('#Approved-Vacations').val(),
+            salary: $('#Salary').val(),
+            phoneNum: $('#Phone-Number').val(),
+            maritalstatus: $('#Martial-Status').val(),
+            ID: $('#IDD').val(),
+        },
+        sucess: function () {
+        }
+    })
+})
+        </script> -->
+        <script src="{% static '/js/Add javascript.js' %}"></script>
+    </body>
+</html>
+
+{% endblock content %}
